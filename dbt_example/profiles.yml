@@ -1,0 +1,10 @@
+dbt_example:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: model-magnet-464723-g9
+      dataset: "{{ env_var('DBT_DBNAME', 'dbt_dw') }}"
+      threads: 4
+      keyfile: /home/zanette/.dbt/model-magnet-464723-g9-1f2f52279f95.json
